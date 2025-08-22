@@ -39,14 +39,15 @@ h1 {
 
 .hero-text-box {
     position: absolute;
-    width: 1140px;
+    max-width: 1140px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
 .btn:link,
-.btn:visited {
+.btn:visited,
+input[type=submit] {
     display: inline-block;
     padding: 10px 30px;
     text-decoration: none;
@@ -56,7 +57,8 @@ h1 {
 }
 
 .btn-full:link,
-.btn-full:visited {
+.btn-full:visited,
+input[type=submit] {
     background-color: orange;
     color: white;
     border: 1px solid orange;
@@ -71,7 +73,8 @@ h1 {
 }
 
 .btn:hover,
-.btn:active {
+.btn:active,
+input[type=submit] {
     background-color: orange;
     color: white;
 }
@@ -90,6 +93,7 @@ h1 {
     float: left;
     margin-top: 20px;
     margin-left: 20px;
+    /* filter: brightness(40); */
 }
 
 .main-nav {
@@ -196,6 +200,7 @@ h3 {
     float: left;
     width: 25%;
 }
+
 .meal-photo {
     width: 100%;
     margin: 0;
@@ -210,57 +215,59 @@ h3 {
     transform: scale(1.15);
     opacity: 0.7;
 }
+
 .meal-photo img:hover {
-   
+
     transform: scale(1.03);
     opacity: 1;
 }
-.section-meals{
+
+.section-meals {
     padding: 10px 0;
     margin: 20px 0;
 }
 
-.section-feature .long-copy{
+.section-feature .long-copy {
     margin-bottom: 30px;
 }
 
-.clearfix{zoom:1}
-.clearfix::after{
-content: ".";
-clear: both;
-display: block;
-height: 0;
-visibility: hidden;
+.clearfix {
+    zoom: 1
+}
+
+.clearfix::after {
+    content: ".";
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
 }
 
 /* how it works section___________________ */
- /* .row .col:nth-child(2) {
-    /* styles only the second column */
-    /* padding-left: 5%; */
-     
-.work-step{
-    margin-bottom: 50px;
-    margin-right: 25px;
+
+
+.row .stepbox:first-of-type {
+  text-align: center;
+  padding-right: 3%;
+  margin-bottom: 0;
 }
 
-.stepbox:first-child{
-    text-align: center;
-    padding-right: 3%;
-    margin-top: 30px;
+.row .stepbox:last-of-type {
+  padding-left: 3%;
 }
 
-.stepbox:last-child{
-    padding-left: 3%;
-    margin: 30px 0;
-}
-.appScreen{
+
+.appScreen {
     width: 40%;
-    box-shadow: 10px 10px 5px rgb(66, 61, 61);
-    
+    filter: drop-shadow(5px 5px 10px rgba(37, 36, 36, 0.5));
 }
 
-/* deending csss concept */
-.work-step div{
+/* Selector	Targets
+div p	:>>  All <p> inside <div>, at any depth
+div >p	:>> Only <p> that are direct children of <div> */
+
+/* descending css concept */ 
+.work-step > div {     /* all div inside any .work-step */ 
     color: orange;
     border: 4px solid orange;
     border-radius: 50%;
@@ -269,49 +276,63 @@ visibility: hidden;
     width: 55px;
     text-align: center;
     padding: 5px;
-    float: left;
     font-size: 150%;
     margin-right: 25px;
+    float: left;
 }
-.work-step:last-of-type{
-    margin-bottom: 60px;
-}
-.btn-app > img{
-       height: 50px;
-       width: auto;
-       margin-right: 15px;
-       margin-bottom: 20px;
-       margin-top: 15px;
-       border: 1px solid red;
-       border-radius: 8%;
+.work-step {
+    margin-bottom: 50px;
+    margin-right: 155px;
+    margin-top: 20px;
 }
 
-.section-steps{
-    background-color: #fff;
-    border:1px solid green;
-    overflow: hidden;
+
+.work-step:first-of-type {
+    margin-bottom: 30px;
+}
+.work-step:last-of-type {
+    margin-bottom: 100px;
+}
+
+
+.btn-app > img {
+    height: 50px;
+    width: auto;
+    margin-right: 15px;
+    margin-bottom: 20px;
+    margin-top: 15px;
+    border: 1px solid red;
+    border-radius: 8%;
+}
+
+.section-steps {
+    background-color: #f4f4f4;
+    padding: 50px 0;
+    margin: 0 20px;
 }
 
 /* _____________city section______________ */
-
-.section-cities{
-    border: 2px solid rgb(23, 41, 179);
+/*  */
+.section-cities > div:first-child{
+    /* background-color: red; */
+    padding-top: 20px;
 }
 .box img{
     width: 100%;
     height: auto;
-    margin-bottom:15px;
+    margin-bottom: 15px;
 }
-.city-feature{
+
+.city-feature {
     margin-bottom: 10px;
 }
 
-.icon-small{
+.icon-small {
     display: inline-block;
-    width:30px;
+    width: 30px;
     text-align: center;
     color: orange;
-    font-size:120%;
+    font-size: 120%;
     line-height: 120%;
     vertical-align: middle;
     margin-top: -5px;
@@ -319,40 +340,222 @@ visibility: hidden;
 }
 
 a:active,
-a:visited{
+a:visited {
     color: #e67e22;
     text-decoration: none;
     border-bottom: 1px solid #e67e22;
-    padding-bottom: 3px;
+    padding-bottom: 2px;
 
 }
+
 a:hover,
-a:active{
-      color: #555;
-      border-bottom: 1px solid transparent;
-      transition: border-botton(0.2s);
+a:active {
+    color: #555;
+    border-bottom: 1px solid transparent;
+    transition: border-botton(0.2s);
 }
 
 /* ____________________________section cities */
 
-.customer-testimonials{
-    border: 2px solid red ;
-    overflow: hidden;
-    max-width: 100%;
+.customer-testimonials {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8)), url(/resources/img/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    color: #fff;
+
+}
+
+.customer-testimonials h2 {
+    padding: 100px 0;
+}
+
+blockquote {
+    padding: 0 20%;
+    padding-bottom: 100px;
+    font-style: italic;
+    line-height: 145%;
+    position: relative;
+}
+
+/* to apply the styling just before blockquote */
+blockquote::before {
+    content: '\201C';
+    font-size: 500%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 60px;
+
+}
+
+cite {
+    display: block;
+    font-size: 90%;
+}
+
+cite img {
+    height: 45px;
+    border-radius: 50%;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+/* _____________________sign_up_________ */
+
+.section-plans {
+    background-color: #f4f4f4;
+    padding-bottom: 100px;
+}
+
+.section-plans h2 {
+    padding-top: 100px;
+}
+
+.plan-box {
+    background-color: #fff;
+    border-radius: 5px;
+    width: 90%;
+    padding: 5px;
+    margin-left: 5%;
+
+}
+
+.plan-box h1 {
+    color: black;
+}
+
+.plan-box ul {
+    list-style: none;
+}
+
+.plan-box ul li {
+    padding: 5px 0;
+}
+
+.plan-box div {
+    padding: 15px;
+    border-bottom: 2px solid #e8e8e8;
+}
+
+.plan-box div:last-child {
+    border: 0;
+    text-align: center;
+}
+
+.plan-box div:first-child {
+    background-color: #efefef;
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.plan-price {
+    font-size: 300%;
+    margin-bottom: 10px;
+    font-weight: 100;
+    color: #e67e22;
+
+}
+
+.plan-price-meal {
+    font-size: 80%;
+}
+
+.plan-price span {
+    font-size: 30%;
+    font-weight: bold;
+}
+
+/* _____________________constact from_ */
+
+.contact-form {
+    width: 60%;
+    margin: 0 auto;
+}
+
+input[type=text],
+input[type=email],
+select {
+    width: 100%;
+    padding: 7px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+
+textarea {
+    height: 100%;
+}
+
+input[type=checkbox] {
+    margin: 20px 10px 5px 0;
+    height: 20px;
+    width: 20px;
 }
 
 
+/* __________________footer-section_____________ */
 
+footer {
+    background-color: #534e4e;
+    font-size: 90%;
+    padding: 50px;
+}
 
+.footer-nav {
+    list-style: none;
+    float: left;
 
+}
 
+.social-links {
+    list-style: none;
+    float: right;
+}
 
+.social-links li,
+.footer-nav li {
+    display: inline-block;
+    margin-right: 30px;
+}
 
+.footer-nav li a:link,
+.footer-nav li a:visited,
+.social-links li a:link,
+.social-links li a:visited {
+    text-decoration: none;
+    border: 0;
+    color: #333;
+}
 
+.social-links li a:link,
+.social-links li a:visited {
+    font-size: 160%;
+}
 
+.footer-nav li a:hover,
+.footer-nav li a:hover {
+    color: #ddd;
+}
 
+footer p {
+    color: #888;
+    text-align: center;
+    font-size: 90%;
+    margin-top: 20px;
+}
 
+.fb:hover {
+    color: #3b5983;
+}
 
+.google:hover {
+    color: #d72b04;
+}
 
+.twitter:hover {
+    color: #00aced;
 
+}
 
+.insta:hover {
+    color: #517fad;
+}

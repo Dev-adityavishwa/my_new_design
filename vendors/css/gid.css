@@ -5,9 +5,16 @@
 /*  SECTIONS  ============================================================================= */
 
 .section {
-	clear: both;
+	clear: both;/* Ensures  unaffected by floating elements */
 	padding: 0px;
 	margin: 0px;
+}
+/* You need to force the parent container to wrap around its floated children. The common way is the clearfix hack:
+ */
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 /*  GROUPING  ============================================================================= */
