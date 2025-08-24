@@ -10,9 +10,11 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="vendors/css/gid.css">
-    <link rel="stylesheet" href="resources/css/styles.css">
     <link rel="stylesheet" href="vendors/css/normalize.css">
+    <link rel="stylesheet" href="vendors/css/gid.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />  <!--jquery framework added for animation form github michals aos-->
+    <link rel="stylesheet" href="resources/css/styles.css">
+    <link rel="stylesheet" href="vendors/css/Querris.css">
 </head>
 
 <body>
@@ -21,21 +23,21 @@
             <div class="row">
                 <img class="logo" src="resources/img/logo.png" alt="logo-img">
                 <div class="main-nav">
-                    <li><a href="#">Food Delhivery</a></li>
-                    <li><a href="#">How it works</a></li>
-                    <li><a href="#">our cities</a></li>
-                    <li><a href="#">sign-up</a></li>
+                    <li><a href="#feature">Food Delhivery</a></li>
+                    <li><a href="#hiw">How it works</a></li>
+                    <li><a href="#city">our cities</a></li>
+                    <li><a href="#signup">sign-up</a></li>
                 </div>
             </div>
         </nav>
         <div class="hero-text-box">
             <h1>GoodBye Junk Food <br>Hello super healthy food</h1>
-            <a href="#" class="btn btn-full">I'm Hungry</a>
-            <a href="#" class="btn btn-ghost">show me more</a>
+            <a href="#plans" class="btn btn-full">I'm Hungry</a>
+            <a href="#feature" class="btn btn-ghost">show me more</a>
 
         </div>
     </header>
-    <section class="section-feature">
+    <section class="section section-feature" id="feature">
         <div class="row">
             <h2>Get food fast &mdash; not fast food</h2>
             <p class="long-copy">
@@ -72,7 +74,7 @@
         </div>
     </section>
 
-    <section class="section-meals">
+    <section class="section section-meals"  data-aos="fade-in" data-aos-duration="2000">
         <ul class="meals-showcase clearfix">
             <li>
                 <figure class="meal-photo">
@@ -121,15 +123,15 @@
     </section>
 
     <!-- ______________________________________ -->
-    <section class="section-steps">
+    <section class="section section-steps" id="hiw" data-aos="fade-in" data-aos-duration="2000">
         <div class="row">
             <h2>How it works &mdash; Simple as 1,2,3</h2>
         </div>
         <div class="row">
-            <div class="col span_1_of_2 stepbox">   <!-- First .stepbox -->
-                <img src="resources/img/iphone.png" alt="" class="appScreen">
+            <div class="col span_1_of_2 stepbox"> <!-- First .stepbox -->
+                <img src="resources/img/iphone.png" alt="" class="appScreen" data-aos="slide-left" data-aos-duration="2000">
             </div>
-            <div class="col span_1_of_2 stepbox">   <!-- Second .stepbox -->
+            <div class="col span_1_of_2 stepbox"> <!-- Second .stepbox -->
                 <div class="work-step">
                     <div>1</div>
                     <p>Choose plan that fits best for your need and sign-up today</p>
@@ -148,7 +150,7 @@
         </div>
     </section>
     <!-- _______________________________________ -->
-    <section class="section-cities">
+    <section class="section section-cities" id="city"  data-aos="fade-in" data-aos-duration="2000">
         <div class="row">
             <h2>we're currently in these cities </h2>
         </div>
@@ -220,7 +222,7 @@
         </div>
     </section>
     <!-- customer testimonials______________ -->
-    <section class="customer-testimonials">
+    <section class="section customer-testimonials" data-aos="fade-in" data-aos-duration="2000">
         <div class="row">
             <h2>Our Customer can't live without us </h2>
         </div>
@@ -251,13 +253,13 @@
     </section>
 
     <!-- ______________________________________________ -->
-    <section class="section-plans">
+    <section class="section section-plans" id="plans" data-aos="fade-in" data-aos-duration="2000">
         <div class="row">
             <h2>Start eating helthy today</h2>
         </div>
         <div class="row">
             <div class="col span_1_of_3">
-                <div class="plan-box">
+                <div class="plan-box" data-aos="Zoom-in" data-aos-duration="2000">
                     <div>
                         <h1>Premium</h1>
                         <p class="plan-price">$399 <span>/ month</span></p>
@@ -322,7 +324,7 @@
             </div>
         </div>
     </section>
-    <section class="section-form">
+    <section class="section section-form" id="signup" data-aos="fade-in" data-aos-duration="2000">
         <div class="row">
             <h2>we are happy to hear from you </h2>
         </div>
@@ -378,7 +380,7 @@
                 </div>
                 <div class="row">
                     <div class="col span_1_of_3 ">
-                        <label>&nbsp;</label>
+                        <label> &nbsp;</label>
                     </div>
                     <div class="col span_2_of_3">
                         <input type="submit" value="sign up" />
@@ -413,7 +415,38 @@
         </div>
 
     </footer>
+    <!-- jquerry added  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script>
+        $(document).ready(function () {
+            // Add smooth scrolling to all links
+            $("a").on('click', function (event) {
 
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+
+                    // Store hash
+                    var hash = this.hash;
+
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function () {
+
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+                } // End if
+            });
+        });
+    </script>
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

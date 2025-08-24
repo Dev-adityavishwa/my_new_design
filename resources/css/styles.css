@@ -7,16 +7,24 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Libertinus+Sans:ital,wght@0,400;0,700;1,400&family=Prata&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
-html {
+html,body {
     background-color: white;
     color: #413939;
     font-family: "Lato", sans-serif;
     font-weight: 300;
     font-size: 20px;
     text-rendering: optimizeLegibility;
+    /* overflow: hidden; */
 }
-
-
+/* .row{
+    max-width: 1140px;
+    margin: 0 auto;
+} */
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
 header {
     background-image: linear-gradient(rgba(0, 0, 0, 0.7)), url(/resources/img/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
     height: 100vh;
@@ -84,6 +92,9 @@ input[type=submit] {
     border: 1px solid orange;
 
 }
+.section{
+    padding:100px 0px;
+}
 
 /* ___________________________navbar  */
 
@@ -125,10 +136,10 @@ input[type=submit] {
     border-bottom: 2px solid orange;
 }
 
-/* _____________________________a */
+/* __________________feature section___________a */
 
 
-.section-feature {
+section .section-feature {
     display: flex;
     flex-direction: column;
     gap: 40px;
@@ -223,7 +234,6 @@ h3 {
 }
 
 .section-meals {
-    padding: 10px 0;
     margin: 20px 0;
 }
 
@@ -252,7 +262,7 @@ h3 {
   margin-bottom: 0;
 }
 
-.row .stepbox:last-of-type {
+.row .stepbox:last-child{
   padding-left: 3%;
 }
 
@@ -307,7 +317,6 @@ div >p	:>> Only <p> that are direct children of <div> */
 
 .section-steps {
     background-color: #f4f4f4;
-    padding: 50px 0;
     margin: 0 20px;
 }
 
@@ -404,11 +413,11 @@ cite img {
 
 .section-plans {
     background-color: #f4f4f4;
-    padding-bottom: 100px;
+    /* padding-bottom: 100px; */
 }
 
 .section-plans h2 {
-    padding-top: 100px;
+    padding:20px 0px 10px;
 }
 
 .plan-box {
@@ -559,3 +568,7 @@ footer p {
 .insta:hover {
     color: #517fad;
 }
+
+
+
+

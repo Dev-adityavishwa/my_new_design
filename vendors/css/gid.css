@@ -11,11 +11,11 @@
 }
 /* You need to force the parent container to wrap around its floated children. The common way is the clearfix hack:
  */
-.row::after {
+/* .row::after {
   content: "";
   display: table;
   clear: both;
-}
+} */
 
 /*  GROUPING  ============================================================================= */
 
